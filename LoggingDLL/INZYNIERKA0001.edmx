@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="INZYNIERKA0001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RIGHT_TO_ROLE_XREF">
+          <Key>
+            <PropertyRef Name="right_id" />
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="right_id" Type="int" Nullable="false" />
+          <Property Name="role_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RIGHTS">
+          <Key>
+            <PropertyRef Name="right_id" />
+          </Key>
+          <Property Name="right_id" Type="int" Nullable="false" />
+          <Property Name="right_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="admin_only" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLES">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="int" Nullable="false" />
+          <Property Name="role_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="admin_role" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USERS_DATA">
+          <Key>
+            <PropertyRef Name="user_login" />
+          </Key>
+          <Property Name="user_login" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="role_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'INZYNIERKA0001.dbo.RIGHT_TO_ROLE_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RIGHT_TO_ROLE_VW">
+          <Key>
+            <PropertyRef Name="right_name" />
+            <PropertyRef Name="role_name" />
+          </Key>
+          <Property Name="right_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="role_name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'INZYNIERKA0001.dbo.USER_DATA_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="USER_DATA_VW">
+          <Key>
+            <PropertyRef Name="role_name" />
+            <PropertyRef Name="user_login" />
+            <PropertyRef Name="user_password" />
+          </Key>
+          <Property Name="role_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_login" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_RIGHT_TO_ROLE_XREF_RIGHTS">
+          <End Role="RIGHTS" Type="Self.RIGHTS" Multiplicity="1" />
+          <End Role="RIGHT_TO_ROLE_XREF" Type="Self.RIGHT_TO_ROLE_XREF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RIGHTS">
+              <PropertyRef Name="right_id" />
+            </Principal>
+            <Dependent Role="RIGHT_TO_ROLE_XREF">
+              <PropertyRef Name="right_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHT_TO_ROLE_XREF_ROLES">
+          <End Role="ROLES" Type="Self.ROLES" Multiplicity="1" />
+          <End Role="RIGHT_TO_ROLE_XREF" Type="Self.RIGHT_TO_ROLE_XREF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLES">
+              <PropertyRef Name="role_id" />
+            </Principal>
+            <Dependent Role="RIGHT_TO_ROLE_XREF">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERS_DATA_ROLES">
+          <End Role="ROLES" Type="Self.ROLES" Multiplicity="1" />
+          <End Role="USERS_DATA" Type="Self.USERS_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLES">
+              <PropertyRef Name="role_id" />
+            </Principal>
+            <Dependent Role="USERS_DATA">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="INZYNIERKA0001ModelStoreContainer">
+          <EntitySet Name="RIGHT_TO_ROLE_XREF" EntityType="Self.RIGHT_TO_ROLE_XREF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RIGHTS" EntityType="Self.RIGHTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLES" EntityType="Self.ROLES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERS_DATA" EntityType="Self.USERS_DATA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RIGHT_TO_ROLE_VW" EntityType="Self.RIGHT_TO_ROLE_VW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RIGHT_TO_ROLE_VW].[right_name] AS [right_name], 
+    [RIGHT_TO_ROLE_VW].[role_name] AS [role_name]
+    FROM [dbo].[RIGHT_TO_ROLE_VW] AS [RIGHT_TO_ROLE_VW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="USER_DATA_VW" EntityType="Self.USER_DATA_VW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [USER_DATA_VW].[role_name] AS [role_name], 
+    [USER_DATA_VW].[user_login] AS [user_login], 
+    [USER_DATA_VW].[user_password] AS [user_password]
+    FROM [dbo].[USER_DATA_VW] AS [USER_DATA_VW]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_RIGHT_TO_ROLE_XREF_RIGHTS" Association="Self.FK_RIGHT_TO_ROLE_XREF_RIGHTS">
+            <End Role="RIGHTS" EntitySet="RIGHTS" />
+            <End Role="RIGHT_TO_ROLE_XREF" EntitySet="RIGHT_TO_ROLE_XREF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHT_TO_ROLE_XREF_ROLES" Association="Self.FK_RIGHT_TO_ROLE_XREF_ROLES">
+            <End Role="ROLES" EntitySet="ROLES" />
+            <End Role="RIGHT_TO_ROLE_XREF" EntitySet="RIGHT_TO_ROLE_XREF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERS_DATA_ROLES" Association="Self.FK_USERS_DATA_ROLES">
+            <End Role="ROLES" EntitySet="ROLES" />
+            <End Role="USERS_DATA" EntitySet="USERS_DATA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="INZYNIERKA0001Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RIGHTS">
+          <Key>
+            <PropertyRef Name="right_id" />
+          </Key>
+          <Property Name="right_id" Type="Int32" Nullable="false" />
+          <Property Name="right_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="admin_only" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ROLES" Relationship="Self.RIGHT_TO_ROLE_XREF" FromRole="RIGHTS" ToRole="ROLES" />
+        </EntityType>
+        <EntityType Name="ROLES">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="Int32" Nullable="false" />
+          <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="admin_role" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="USERS_DATA" Relationship="Self.FK_USERS_DATA_ROLES" FromRole="ROLES" ToRole="USERS_DATA" />
+          <NavigationProperty Name="RIGHTS" Relationship="Self.RIGHT_TO_ROLE_XREF" FromRole="ROLES" ToRole="RIGHTS" />
+        </EntityType>
+        <EntityType Name="USERS_DATA">
+          <Key>
+            <PropertyRef Name="user_login" />
+          </Key>
+          <Property Name="user_login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ROLES" Relationship="Self.FK_USERS_DATA_ROLES" FromRole="USERS_DATA" ToRole="ROLES" />
+        </EntityType>
+        <EntityType Name="RIGHT_TO_ROLE_VW">
+          <Key>
+            <PropertyRef Name="right_name" />
+            <PropertyRef Name="role_name" />
+          </Key>
+          <Property Name="right_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_DATA_VW">
+          <Key>
+            <PropertyRef Name="role_name" />
+            <PropertyRef Name="user_login" />
+            <PropertyRef Name="user_password" />
+          </Key>
+          <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_USERS_DATA_ROLES">
+          <End Role="ROLES" Type="Self.ROLES" Multiplicity="1" />
+          <End Role="USERS_DATA" Type="Self.USERS_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLES">
+              <PropertyRef Name="role_id" />
+            </Principal>
+            <Dependent Role="USERS_DATA">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RIGHT_TO_ROLE_XREF">
+          <End Role="RIGHTS" Type="Self.RIGHTS" Multiplicity="*" />
+          <End Role="ROLES" Type="Self.ROLES" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="INZYNIERKA0001" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RIGHTS" EntityType="Self.RIGHTS" />
+          <EntitySet Name="ROLES" EntityType="Self.ROLES" />
+          <EntitySet Name="USERS_DATA" EntityType="Self.USERS_DATA" />
+          <EntitySet Name="RIGHT_TO_ROLE_VW" EntityType="Self.RIGHT_TO_ROLE_VW" />
+          <EntitySet Name="USER_DATA_VW" EntityType="Self.USER_DATA_VW" />
+          <AssociationSet Name="FK_USERS_DATA_ROLES" Association="Self.FK_USERS_DATA_ROLES">
+            <End Role="ROLES" EntitySet="ROLES" />
+            <End Role="USERS_DATA" EntitySet="USERS_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="RIGHT_TO_ROLE_XREF" Association="Self.RIGHT_TO_ROLE_XREF">
+            <End Role="RIGHTS" EntitySet="RIGHTS" />
+            <End Role="ROLES" EntitySet="ROLES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="INZYNIERKA0001ModelStoreContainer" CdmEntityContainer="INZYNIERKA0001">
+          <EntitySetMapping Name="RIGHTS">
+            <EntityTypeMapping TypeName="INZYNIERKA0001Model.RIGHTS">
+              <MappingFragment StoreEntitySet="RIGHTS">
+                <ScalarProperty Name="right_id" ColumnName="right_id" />
+                <ScalarProperty Name="right_name" ColumnName="right_name" />
+                <ScalarProperty Name="admin_only" ColumnName="admin_only" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLES">
+            <EntityTypeMapping TypeName="INZYNIERKA0001Model.ROLES">
+              <MappingFragment StoreEntitySet="ROLES">
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+                <ScalarProperty Name="admin_role" ColumnName="admin_role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS_DATA">
+            <EntityTypeMapping TypeName="INZYNIERKA0001Model.USERS_DATA">
+              <MappingFragment StoreEntitySet="USERS_DATA">
+                <ScalarProperty Name="user_login" ColumnName="user_login" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RIGHT_TO_ROLE_VW">
+            <EntityTypeMapping TypeName="INZYNIERKA0001Model.RIGHT_TO_ROLE_VW">
+              <MappingFragment StoreEntitySet="RIGHT_TO_ROLE_VW">
+                <ScalarProperty Name="right_name" ColumnName="right_name" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_DATA_VW">
+            <EntityTypeMapping TypeName="INZYNIERKA0001Model.USER_DATA_VW">
+              <MappingFragment StoreEntitySet="USER_DATA_VW">
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+                <ScalarProperty Name="user_login" ColumnName="user_login" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="RIGHT_TO_ROLE_XREF" TypeName="INZYNIERKA0001Model.RIGHT_TO_ROLE_XREF" StoreEntitySet="RIGHT_TO_ROLE_XREF">
+            <EndProperty Name="RIGHTS">
+              <ScalarProperty Name="right_id" ColumnName="right_id" />
+            </EndProperty>
+            <EndProperty Name="ROLES">
+              <ScalarProperty Name="role_id" ColumnName="role_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
