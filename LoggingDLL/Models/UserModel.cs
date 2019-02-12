@@ -11,9 +11,31 @@ namespace LoggingDLL.Models
         protected string _login;
         protected string _password;
         protected List<string> _userRights;
+        protected INZYNIERKA0001 DataSet = new INZYNIERKA0001();
 
-        public string Login { get; }
-        public string Password { get; }
-        public string UserRights { get; }
+        public string Login { get { return _login; } }
+
+        public string Password { get { return _password; } }
+        public List<string> UserRights
+        {
+            get
+            {
+                return _userRights;
+            }
+            set
+            {
+                if (UserRights.Count() != 0)
+                {
+                    foreach (var Right in UserRights)
+                    {
+                        _userRights.Add(Right);
+                    }
+                }
+                else
+                {
+                    _userRights = null;
+                }
+            }
+        }
     }
 }

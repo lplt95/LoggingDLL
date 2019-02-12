@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>INZYNIERKA0001.edmx</DependentUpon>
     </Compile>
+    <Compile Include="LoginProvider.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="RIGHTS.cs">
       <DependentUpon>INZYNIERKA0001.tt</DependentUpon>
