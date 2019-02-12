@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace LoggingDLL
 {
-    class Crypto
+    public class Crypto
     {
         /// <summary>
         /// Preparing hash of string using SHA-512
