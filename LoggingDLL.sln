@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingDLL", "LoggingDLL\Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministrateUsers", "CreateNewUser\AdministrateUsers.csproj", "{BE1FD643-E207-4219-A447-6FD0EFC6EC3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendingMessages", "SendingMessages\SendingMessages.csproj", "{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BE1FD643-E207-4219-A447-6FD0EFC6EC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE1FD643-E207-4219-A447-6FD0EFC6EC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE1FD643-E207-4219-A447-6FD0EFC6EC3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

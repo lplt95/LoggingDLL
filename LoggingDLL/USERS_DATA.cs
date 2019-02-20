@@ -17,6 +17,8 @@ namespace LoggingDLL
         public string user_login { get; set; }
         public string user_password { get; set; }
         public int role_id { get; set; }
+        public bool need_password_change { get; set; }
+        public string user_email { get; set; }
     
         public virtual ROLES ROLES { get; set; }
     }

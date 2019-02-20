@@ -36,6 +36,8 @@
           <Property Name="user_login" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="user_password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="role_id" Type="int" Nullable="false" />
+          <Property Name="need_password_change" Type="bit" Nullable="false" />
+          <Property Name="user_email" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'INZYNIERKA0001.dbo.RIGHT_TO_ROLE_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -157,6 +159,8 @@ warning 6002: The table/view 'INZYNIERKA0001.dbo.USER_DATA_VW' does not have a p
           <Property Name="user_login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="user_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="role_id" Type="Int32" Nullable="false" />
+          <Property Name="need_password_change" Type="Boolean" Nullable="false" />
+          <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="ROLES" Relationship="Self.FK_USERS_DATA_ROLES" FromRole="USERS_DATA" ToRole="ROLES" />
         </EntityType>
         <EntityType Name="RIGHT_TO_ROLE_VW">
@@ -238,6 +242,8 @@ warning 6002: The table/view 'INZYNIERKA0001.dbo.USER_DATA_VW' does not have a p
                 <ScalarProperty Name="user_login" ColumnName="user_login" />
                 <ScalarProperty Name="user_password" ColumnName="user_password" />
                 <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="need_password_change" ColumnName="need_password_change" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -10,6 +10,7 @@ namespace LoggingDLL.Models
     {
         protected string _login;
         protected string _password;
+        protected string _emailAddress;
         protected List<string> _userRights;
         protected INZYNIERKA0001 DataSet = new INZYNIERKA0001();
 
