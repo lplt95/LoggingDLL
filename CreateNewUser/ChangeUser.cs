@@ -64,7 +64,7 @@ namespace CreateNewUser
                 try
                 {
                     DataSet.SaveChanges();
-                    Message infoMessage = new Message(changingUser.user_login, _messageText, "Password reset");
+                    //Message infoMessage = new Message(changingUser.user_login, _messageText, "Password reset");
                 }
                 catch (Exception e)
                 { 

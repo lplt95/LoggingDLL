@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministrateUsers", "Create
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendingMessages", "SendingMessages\SendingMessages.csproj", "{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringHelpers", "ClassLibrary1\StringHelpers.csproj", "{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10C2A714-C686-4D7B-8E58-C4C4DD12C1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
