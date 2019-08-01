@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendingMessages", "SendingM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringHelpers", "ClassLibrary1\StringHelpers.csproj", "{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManagement\DataManagement.csproj", "{4084F288-BACA-4C9D-A22C-4C217354DC61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97F3E3E2-1928-40CA-ADBE-5B5B9A48DE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4084F288-BACA-4C9D-A22C-4C217354DC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4084F288-BACA-4C9D-A22C-4C217354DC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4084F288-BACA-4C9D-A22C-4C217354DC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4084F288-BACA-4C9D-A22C-4C217354DC61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
