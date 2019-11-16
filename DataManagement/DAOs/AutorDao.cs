@@ -3,34 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataManagement.DTOs;
+using DatabaseProvider;
+using DataTransfer;
 
 namespace DataManagement.DAOs
 {
     class AutorDao
     {
-        public List<AutorDto> getAutorsByBook(int bookId)
+        ProviderTest provider;
+        public AutorDao()
         {
-            var authorsList = new List<AutorDto>();
-            return authorsList;
+            provider = new ProviderTest();
         }
-        public List<AutorDto> getAllAuthors()
+        public List<AutorDto> GetAllAuthors()
         {
-            var authorsList = new List<AutorDto>();
-            return authorsList;
+            return provider.GetAllData();
         }
-        public List<int> getAuthorsIdByName(string autorName)
+        public List<AutorDto> GetAuthorByPosition(PozycjaDto position)
         {
-            var authorsList = new List<int>();
-            return authorsList;
+            int positionId = position.idPozycja;
+            return new List<AutorDto>();
         }
-        public bool insertAutor(AutorDto autor)
+        public bool InsertNewAuthors(List<AutorDto> authorsList)
         {
+            foreach (var author in authorsList)
+            {
+                //sth
+            }
             return true;
         }
-        public bool deleteAutor(int autorId)
-        {
-            return true;
-        }
+        //public 
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement.DTOs
+namespace DataTransfer
 {
-    class NotatkaDto
+    public class NotatkaDto
     {
         public int idNotatka { get; set; }
         public string tresc { get; set; }

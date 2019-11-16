@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement
+namespace DataTransfer
 {
-    public class Class1
+    public class WydawcaDto
     {
+        public int idWydawca { get; set; }
+        public string Nazwa { get; set; }
     }
 }

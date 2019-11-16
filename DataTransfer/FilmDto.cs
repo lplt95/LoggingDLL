@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement.DTOs
+namespace DataTransfer
 {
-    class FilmDto : PozycjaDto
+    public class FilmDto
     {
         public int idFilm { get; set; }
         public int DlugoscTrwania { get; set; }
