@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataManagement.DTOs
 {
-    class MuzykaDto
+    class MuzykaDto : PozycjaDto
     {
         public int idMuzyka { get; set; }
         public int IloscSciezek { get; set; }

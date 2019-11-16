@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataManagement.DTOs
 {
-    class FilmDto
+    class FilmDto : PozycjaDto
     {
         public int idFilm { get; set; }
         public int DlugoscTrwania { get; set; }

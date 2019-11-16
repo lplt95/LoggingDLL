@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAOs\AutorDao.cs" />
+    <Compile Include="DAOs\FilmDao.cs" />
+    <Compile Include="DAOs\KsiazkaDao.cs" />
     <Compile Include="DTOs\AutorDto.cs" />
     <Compile Include="DTOs\FilmDto.cs" />
     <Compile Include="DTOs\KsiazkaDto.cs" />
