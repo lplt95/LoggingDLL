@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement.DTOs
+namespace ConsoleApp1
 {
-    class WydawcaDto
+    class Program
     {
-        public int idWydawca { get; set; }
-        public string Nazwa { get; set; }
+        static void Main(string[] args)
+        {
+        }
     }
 }

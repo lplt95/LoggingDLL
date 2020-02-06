@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement.DTOs
+namespace ConsoleApp1
 {
-    class OcenaDto
+    class SelfHost
     {
-        public int idOcena { get; set; }
-        public int ocena { get; set; }
     }
 }

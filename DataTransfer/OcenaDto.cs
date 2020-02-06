@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement.DTOs
+namespace DataTransfer
 {
-    class FilmDto
+    public class OcenaDto
     {
-        public int idFilm { get; set; }
-        public int DlugoscTrwania { get; set; }
+        public int idOcena { get; set; }
+        public int ocena { get; set; }
     }
 }

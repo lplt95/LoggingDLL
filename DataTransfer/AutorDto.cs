@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement.DTOs
+namespace DataTransfer
 {
-    class RezyserzyDto
+    public class AutorDto
     {
-        public int idRezyser { get; set; }
+        public int idAutora { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
     }

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement.DTOs
+namespace DataTransfer
 {
-    class KsiazkaDto
+    public class KsiazkaDto : PozycjaDto
     {
         public int idKsiazka { get; set; }
         public int IloscStron { get; set; }
-        public bool OkladkaTyp { get; set; }
+        public bool OkladkaTyp { private get; set; }
         public int idWydawca { get; set; }
         public string Okladka { get; }
         public KsiazkaDto()

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataManagement.DTOs
+namespace DataTransfer
 {
-    class PozycjaDto
+    public class PozycjaDto
     {
         public int idPozycja { get; set; }
         public string tytul { get; set; }
