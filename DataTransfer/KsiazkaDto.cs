@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataTransfer
 {
-    public class KsiazkaDto
+    public class KsiazkaDto : PozycjaDto
     {
         public int idKsiazka { get; set; }
         public int IloscStron { get; set; }
-        public bool OkladkaTyp { get; set; }
+        public bool OkladkaTyp { private get; set; }
         public int idWydawca { get; set; }
         public string Okladka { get; }
         public KsiazkaDto()

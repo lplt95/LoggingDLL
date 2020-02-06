@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseProvider", "Databas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransfer", "DataTransfer\DataTransfer.csproj", "{E092B1EE-9A69-477B-9109-E660C33ACF6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShelfItService", "ShelfItService\ShelfItService.csproj", "{7F0A9286-0071-4236-9D4B-9B4C6E760E08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +173,26 @@ Global
 		{E092B1EE-9A69-477B-9109-E660C33ACF6D}.Release|x64.Build.0 = Release|Any CPU
 		{E092B1EE-9A69-477B-9109-E660C33ACF6D}.Release|x86.ActiveCfg = Release|Any CPU
 		{E092B1EE-9A69-477B-9109-E660C33ACF6D}.Release|x86.Build.0 = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|ARM.Build.0 = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|x64.Build.0 = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Debug|x86.Build.0 = Debug|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|ARM.Build.0 = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|ARM64.Build.0 = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|x64.ActiveCfg = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|x64.Build.0 = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|x86.ActiveCfg = Release|Any CPU
+		{7F0A9286-0071-4236-9D4B-9B4C6E760E08}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

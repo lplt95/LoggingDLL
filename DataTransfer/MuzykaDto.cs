@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataTransfer
 {
-    public class MuzykaDto
+    public class MuzykaDto : PozycjaDto
     {
         public int idMuzyka { get; set; }
         public int IloscSciezek { get; set; }
