@@ -10,12 +10,6 @@ namespace DataTransfer
     {
         public int idKsiazka { get; set; }
         public int IloscStron { get; set; }
-        public bool OkladkaTyp { private get; set; }
-        public int idWydawca { get; set; }
-        public string Okladka { get; }
-        public KsiazkaDto()
-        {
-            Okladka = OkladkaTyp ? "Twarda" : "Miękka";
-        }
+        public string Okladka { get; set; }
     }
 }

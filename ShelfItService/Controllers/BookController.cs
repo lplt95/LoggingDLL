@@ -11,13 +11,11 @@ namespace ShelfItService.Controllers
     public class BookController : Controller
     {
         List<KsiazkaDto> listaKsiazek;
+        BookRepository repository;
         public BookController()
         {
-            listaKsiazek = new List<KsiazkaDto>
-            {
-                new KsiazkaDto { idKsiazka = 1, IloscStron = 100, OkladkaTyp = false},
-                new KsiazkaDto { idKsiazka = 2, IloscStron = 150, OkladkaTyp = true }
-            };
+            repository = new BookRepository();
+            listaKsiazek = repository.ksiazki;
         }
         [HttpGet()]
         public IActionResult GetAllBooks()
