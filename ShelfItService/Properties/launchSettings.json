@@ -7,7 +7,7 @@
       "sslPort": 0
     },
     "iisExpress": {
-      "applicationUrl": "http://192.168.1.215:61062",
+      "applicationUrl": "http://192.168.1.132:61061",
       "sslPort": 0
     }
   },

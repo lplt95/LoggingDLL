@@ -50,6 +50,8 @@
     <Compile Include="OcenaDto.cs" />
     <Compile Include="PozycjaDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypConst.cs" />
+    <Compile Include="UserDto.cs" />
     <Compile Include="WydawcaDto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,12 +2,12 @@
 using System.Text;
 using System.Security.Cryptography;
 
-namespace LoggingDLL
+namespace ShelfItService
 {
     public class Crypto
     {
         /// <summary>
-        /// Preparing hash of string using MD5
+        /// Preparing hash of string using SHA-512
         /// </summary>
         /// <param name="input">String to hash</param>
         /// <returns></returns>

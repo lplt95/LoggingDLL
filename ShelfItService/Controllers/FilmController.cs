@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ShelfItService.Repositories;
 using DataTransfer;
 
 namespace ShelfItService.Controllers
@@ -10,30 +11,37 @@ namespace ShelfItService.Controllers
     [Route("ShelfIt/Film")]
     public class FilmController : Controller
     {
+        List<FilmDto> listaFilmow;
+        FilmRepository repository;
+        public FilmController()
+        {
+            repository = new FilmRepository();
+            listaFilmow = repository.filmy;
+        }
         [HttpGet]
         public IActionResult GetAllFilms()
         {
-            return Ok();
+            return Ok(listaFilmow);
         }
         [HttpGet("{id}")]
         public IActionResult GetFilm(int id)
         {
-            FilmDto film = null;
-            if(film == null)
+            var filmToReturn = listaFilmow.FirstOrDefault(f => f.idFilm == id);
+            if (filmToReturn == null)
             {
                 return NotFound();
             }
-            return Ok(film);
+            return Ok(filmToReturn);
         }
         [HttpGet("{name}")]
         public IActionResult GetFilm(string name)
         {
-            FilmDto film = null;
-            if(film == null)
+            var filmToReturn = listaFilmow.FirstOrDefault(f => f.tytul.Contains(name));
+            if (filmToReturn == null)
             {
                 return NotFound();
             }
-            return Ok(film);
+            return Ok(filmToReturn);
         }
     }
 }
